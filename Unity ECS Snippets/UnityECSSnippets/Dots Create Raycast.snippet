@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Dots Create Raycast</Title>
+      <Author>
+      </Author>
+      <Description>Create a Unity Physics (the DOTS package) raycast. NOTE: requires Unity Physics package to be installed and a using directive - using Unity.Physics</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dcrc</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Unity.Physics</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>startPosition</ID>
+          <ToolTip>startPosition</ToolTip>
+          <Default>startPosition</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>endPosition</ID>
+          <ToolTip>endPosition</ToolTip>
+          <Default>endPosition</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>belongto</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>~0u</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>collideswith</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>~0u</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>0</ID>
+          <ToolTip>0</ToolTip>
+          <Default>0</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[var collisionWorld = SystemAPI.GetSingleton<PhysicsWorldSingleton>().CollisionWorld;
+
+RaycastInput input = new RaycastInput()
+{
+    Start = $startPosition$,
+    End = $endPosition$,
+    Filter = new CollisionFilter()
+    {
+        BelongsTo = $belongto$,
+        CollidesWith = $collideswith$, // all 1s, so all layers, collide with everything
+        GroupIndex = $0$
+    }
+};
+
+RaycastHit hit = new RaycastHit();
+bool didHit = collisionWorld.CastRay(input, out hit);
+
+if (didHit)
+{
+    $end$
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Dots Create Baker</Title>
+      <Author>
+      </Author>
+      <Description>Create a Unity DOTS component baker &amp; its authoring monobehavior class</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dcb</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ns</ID>
+          <ToolTip>ns</ToolTip>
+          <Default>ns</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Component</ID>
+          <ToolTip>Component</ToolTip>
+          <Default>Component</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ComponentVariable</ID>
+          <ToolTip>ComponentVariable</ToolTip>
+          <Default>ComponentVariable</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>float</ID>
+          <ToolTip>float</ToolTip>
+          <Default>float</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>variable</ID>
+          <ToolTip>variable</ToolTip>
+          <Default>variable</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[using UnityEngine;
+using Unity.Entities;
+
+namespace $ns$
+{
+    public class $Component$Authoring : MonoBehaviour
+    {
+        public $float$ $variable$;$end$
+    }
+
+    public class $Component$Baker : Baker<$Component$Authoring>
+    {
+        public override void Bake($Component$Authoring authoring)
+        {
+            var entity = GetEntity(TransformUsageFlags.Dynamic);
+            AddComponent(entity, new $Component$
+            {
+                $ComponentVariable$ = authoring.$variable$
+            });
+        }
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

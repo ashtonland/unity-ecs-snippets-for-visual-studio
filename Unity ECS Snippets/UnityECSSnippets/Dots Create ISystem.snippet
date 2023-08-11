@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Dots Create ISystem</Title>
+      <Author>Ashton Dev</Author>
+      <Description>Create a Unity DOTS System with the ISystem interface</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dcs</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ns</ID>
+          <ToolTip>The namespace this system belongs to</ToolTip>
+          <Default>ns</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Name of your system</ToolTip>
+          <Default>Name</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$" Kind="method body"><![CDATA[using Unity.Burst;
+using Unity.Entities;
+using Unity.Mathematics;
+
+namespace $ns$
+{
+    [BurstCompile]
+    public partial struct $Name$System : ISystem
+    {
+        public void OnCreate(ref SystemState state)
+        {
+            $end$
+        }
+
+        [BurstCompile]
+        public void OnUpdate(ref SystemState state)
+        {
+            
+        }
+
+        public void OnDestroy(ref SystemState state)
+        {
+            
+        }
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

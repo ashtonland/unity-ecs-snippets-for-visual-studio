@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Dots Create Managed Component w/ External Resource</Title>
+      <Author>
+      </Author>
+      <Description>Create a Unity DOTS managed component referencing an external resource</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dcmcer</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ns</ID>
+          <ToolTip>ns</ToolTip>
+          <Default>ns</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Name</ToolTip>
+          <Default>Name</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ParticleSystem</ID>
+          <ToolTip>ParticleSystem</ToolTip>
+          <Default>ParticleSystem</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Particles</ID>
+          <ToolTip>Particles</ToolTip>
+          <Default>Particles</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[using System;
+using UnityEngine;
+using Unity.Entities;
+
+namespace $ns$
+{
+    public class $Name$ : IComponentData, IDisposable, ICloneable
+    {
+        public $ParticleSystem$ $Particles$;$end$
+
+        public void Dispose()
+        {
+            //garbage collection when this component is destroyed
+            UnityEngine.Object.Destroy($Particles$);
+        }
+
+        public object Clone()
+        {
+            //duplicate a new particle system when this entity is duplicated
+            //so that all copy entity instances do not use the same external resource
+            return new $Name$
+            {
+                $Particles$ = UnityEngine.Object.Instantiate($Particles$)
+            };
+        }
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

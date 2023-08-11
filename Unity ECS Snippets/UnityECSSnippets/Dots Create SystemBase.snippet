@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Dots Create SystemBase</Title>
+      <Author>
+      </Author>
+      <Description>Create a managed Unity DOTS System with the SystemBase class</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dcsb</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ns</ID>
+          <ToolTip>ns</ToolTip>
+          <Default>ns</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Name</ToolTip>
+          <Default>Name</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[using Unity.Entities;
+using Unity.Mathematics;
+
+namespace $ns$
+{
+    public partial class $Name$System : SystemBase
+    {
+        protected override void OnCreate()
+        {
+            $end$
+        }
+
+        protected override void OnUpdate()
+        {
+
+        }
+
+        protected override void OnDestroy()
+        {
+
+        }
+        protected override void OnStartRunning()
+        {
+
+        }
+
+        protected override void OnStopRunning()
+        {
+
+        }
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
