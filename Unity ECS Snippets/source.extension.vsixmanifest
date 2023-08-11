@@ -10,7 +10,7 @@
         <Tags>unity dots, unity ecs, snippets, c#, dots, ecs, unity, unity3d, c sharp, gamedev</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0, 18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
