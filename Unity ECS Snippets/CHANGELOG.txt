@@ -1,0 +1,32 @@
+Change Log
+
+[1.3.1]
+
+Fixes
+- Adds raycast snippet documentation, which was previously lacking
+
+[1.3.0]
+
+Introduces Raycast snippet
+- dcrc | Dots Create Raycast
+
+Fixes
+- Removes extra bracket in ISystem w/ onStart onStop snippet (dcsss)
+
+[1.2.0]
+
+Introduces Aspect snippet
+- dca | Dots Create Aspect
+
+Fixes
+- Removes transform namespace in system snippets
+
+[1.1.0]
+
+Introduces Baker snippets:
+- dcb | Dots Create Baker
+- dcbd | Dots Create Baker with Dependency
+
+[1.0.0]
+
+- Initial release
