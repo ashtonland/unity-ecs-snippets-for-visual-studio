@@ -5,7 +5,7 @@
     Official Visual Studio port of the Unity ECS Snippets vscode extension.
     <br />
     <br />
-    <a href="https://github.com/ashtonland/unity-ecs-snippets"><strong>See in action »</strong></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=ashtondev.unity-ecs-snippets-vs"><strong>Marketplace</strong></a> | <a href="https://github.com/ashtonland/unity-ecs-snippets-for-visual-studio"><strong>Github</strong></a>
    	<br />
   </p>
 </div>
